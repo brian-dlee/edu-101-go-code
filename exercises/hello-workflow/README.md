@@ -44,21 +44,21 @@ $ go run worker/main.go
 2. Run the following command, replacing `Donna` with your first name. Be sure to retain the same quoting shown here when you run the command:
 
 ```
-$ tctl workflow start \
-    --workflow_type GreetSomeone \
-    --taskqueue greeting-tasks \
-    --workflow_id my-first-workflow \
-    --input '"Donna"' 
+$ temporal workflow start \
+    --type HelloWorkflowWorkflow \
+    --task-queue greeting-tasks \
+    --workflow-id my-first-workflow \
+    --input '"Donna"'
 ```
 
 Note that this command starts the Workflow, but it does not wait for it to complete or show the result. 
-If you have time, continue with the optional part of the exercise below to see how to view the result using `tctl`.
+If you have time, continue with the optional part of the exercise below to see how to view the result using `temporal`.
 
 ## Part E (Optional): Display the Result
 You can run the following command to display the result of a Workflow Execution: 
 
 ```
-tctl workflow show --workflow_id my-first-workflow
+temporal workflow show --workflow-id my-first-workflow
 ```
 
 It is also possible, and often more convenient, to view this information using the Web UI. You will 
