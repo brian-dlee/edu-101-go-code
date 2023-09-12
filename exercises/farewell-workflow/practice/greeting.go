@@ -19,8 +19,7 @@ func GreetSomeone(ctx workflow.Context, name string) (string, error) {
 	}
 
 	var spanishFarewell string
-	// TODO: uncomment the line below and change it to execute the Activity function you created
-	//err = workflow.ExecuteActivity(ctx, GreetInSpanish, name).Get(ctx, &spanishFarewell)
+	err = workflow.ExecuteActivity(ctx, FarewellInSpanish, name).Get(ctx, &spanishFarewell)
 	if err != nil {
 		return "", err
 	}
